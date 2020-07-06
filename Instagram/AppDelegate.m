@@ -20,7 +20,7 @@
           ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         
         configuration.applicationId = @"ria-instagram";
-        configuration.server = @"http://ria-instagram.herokuapp.com/parse";
+        configuration.server = @"https://ria-instagram.herokuapp.com/parse";
     }];
     
     [Parse initializeWithConfiguration:config];
