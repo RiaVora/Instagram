@@ -70,11 +70,46 @@
                     <connections>
                         <outlet property="passwordTextField" destination="eCm-30-iII" id="4x2-SY-O2F"/>
                         <outlet property="usernameTextField" destination="SFm-7V-527" id="DCD-fu-DGX"/>
+                        <segue destination="gxQ-cU-zn5" kind="presentation" identifier="loginSegue" id="mwL-zT-ofl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
+        </scene>
+        <!--FeedViewController-->
+        <scene sceneID="I80-nO-pVn">
+            <objects>
+                <viewController storyboardIdentifier="FeedViewController" title="FeedViewController" modalPresentationStyle="fullScreen" id="X04-IE-ng3" customClass="FeedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rRv-EO-7eb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tZj-iF-fKf"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Feed" id="982-hE-Fbt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRh-zN-Hei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1871.0144927536232" y="69.642857142857139"/>
+        </scene>
+        <!--FeedNavController-->
+        <scene sceneID="mRt-bc-wyK">
+            <objects>
+                <navigationController storyboardIdentifier="FeedNavController" title="FeedNavController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="gxQ-cU-zn5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G2T-rT-G2Q">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="X04-IE-ng3" kind="relationship" relationship="rootViewController" id="fnD-cL-4lC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tlX-LB-DxR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="960.86956521739137" y="69.642857142857139"/>
         </scene>
     </scenes>
 </document>

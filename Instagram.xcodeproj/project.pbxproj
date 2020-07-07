@@ -10,6 +10,7 @@
 		0EE1CD24FA20979C4BF2CEFD /* Pods_InstagramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21D57644B6CC419E849AE103 /* Pods_InstagramTests.framework */; };
 		23D2709DE8BBD4F2FE5CB0DD /* Pods_Instagram_InstagramUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B9E6E43593B0244E39B903 /* Pods_Instagram_InstagramUITests.framework */; };
 		27DF388E14ADAF16A7EF6C80 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C56E40BB4198AACE94FC5B /* Pods_Instagram.framework */; };
+		586E958B24B40BE000B63CCA /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E958A24B40BE000B63CCA /* FeedViewController.m */; };
 		5893439124B3C80100C431BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439024B3C80100C431BD /* AppDelegate.m */; };
 		5893439424B3C80100C431BD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439324B3C80100C431BD /* SceneDelegate.m */; };
 		5893439724B3C80100C431BD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439624B3C80100C431BD /* LoginViewController.m */; };
@@ -45,6 +46,8 @@
 		21D57644B6CC419E849AE103 /* Pods_InstagramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24923FA954305F168289286E /* Pods-Instagram-InstagramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram-InstagramUITests.release.xcconfig"; path = "Target Support Files/Pods-Instagram-InstagramUITests/Pods-Instagram-InstagramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		54ED6C70984B6226305C2450 /* Pods-InstagramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramTests/Pods-InstagramTests.debug.xcconfig"; sourceTree = "<group>"; };
+		586E958924B40BE000B63CCA /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		586E958A24B40BE000B63CCA /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		5893438C24B3C80100C431BD /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5893438F24B3C80100C431BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5893439024B3C80100C431BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -96,6 +99,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		586E958824B40BB300B63CCA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5893439524B3C80100C431BD /* LoginViewController.h */,
+				5893439624B3C80100C431BD /* LoginViewController.m */,
+				586E958924B40BE000B63CCA /* FeedViewController.h */,
+				586E958A24B40BE000B63CCA /* FeedViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		5893438324B3C80100C431BD = {
 			isa = PBXGroup;
 			children = (
@@ -121,12 +135,11 @@
 		5893438E24B3C80100C431BD /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				586E958824B40BB300B63CCA /* View Controllers */,
 				5893438F24B3C80100C431BD /* AppDelegate.h */,
 				5893439024B3C80100C431BD /* AppDelegate.m */,
 				5893439224B3C80100C431BD /* SceneDelegate.h */,
 				5893439324B3C80100C431BD /* SceneDelegate.m */,
-				5893439524B3C80100C431BD /* LoginViewController.h */,
-				5893439624B3C80100C431BD /* LoginViewController.m */,
 				5893439824B3C80100C431BD /* Main.storyboard */,
 				5893439B24B3C80200C431BD /* Assets.xcassets */,
 				5893439D24B3C80200C431BD /* LaunchScreen.storyboard */,
@@ -416,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5893439724B3C80100C431BD /* LoginViewController.m in Sources */,
+				586E958B24B40BE000B63CCA /* FeedViewController.m in Sources */,
 				5893439124B3C80100C431BD /* AppDelegate.m in Sources */,
 				589343A224B3C80200C431BD /* main.m in Sources */,
 				5893439424B3C80100C431BD /* SceneDelegate.m in Sources */,
