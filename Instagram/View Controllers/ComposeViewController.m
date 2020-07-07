@@ -7,6 +7,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -48,6 +49,14 @@
 - (IBAction)pressedPost:(id)sender {
     NSString *caption = self.captionTextField.text;
     UIImage *image = self.chosenImageView.image;
+    
+    [Post postUserImage:image withCaption:caption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"Post was successful!");
+        } else {
+            NSLog(@"Error posting photo: %@", error.localizedDescription);
+        }
+    }];
     
     
     [self dismissViewControllerAnimated:true completion:nil];
