@@ -11,9 +11,11 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 #import "Post.h"
+#import "PostCell.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *posts;
 
 @end
@@ -22,10 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
-
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (IBAction)pressedLogout:(id)sender {
@@ -79,9 +79,10 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             // do something with the data fetched
+            [self.tableView reloadData];
         }
         else {
-            // handle error
+            NSLog(@"There was a problem fetching Posts: %@", error.localizedDescription);
         }
     }];
 }
@@ -90,18 +91,19 @@
     
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.posts.count;
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+        return self.posts.count;
 }
+
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
