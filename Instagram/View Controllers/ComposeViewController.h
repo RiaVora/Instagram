@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ComposeViewController : UIViewController
-@property (nonatomic, strong) UIImage *chosenImage;
+@property (weak, nonatomic) IBOutlet UIImageView *chosenImageView;
+@property (weak, nonatomic) IBOutlet UITextField *captionTextField;
 
 @end
 

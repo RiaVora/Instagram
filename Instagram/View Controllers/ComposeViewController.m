@@ -20,10 +20,6 @@
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
     imagePickerVC.delegate = self;
     imagePickerVC.allowsEditing = YES;
-    imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-    
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
     }
@@ -31,6 +27,9 @@
         NSLog(@"Camera 🚫 available so we will use photo library instead");
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
+
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -38,9 +37,15 @@
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
-    self.chosenImage = originalImage;
+    self.chosenImageView.image = nil;
+    self.chosenImageView.image = originalImage;
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(IBAction)pressedCancel:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+- (IBAction)pressedPost:(id)sender {
 }
 
 /*

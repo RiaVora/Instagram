@@ -96,6 +96,11 @@
                         <rightBarButtonItems>
                             <barButtonItem id="OlU-6j-KyN"/>
                             <barButtonItem landscapeImage="insta_camera_btn" id="fQG-dE-peA"/>
+                            <barButtonItem systemItem="camera" id="dod-FB-HYV">
+                                <connections>
+                                    <segue destination="9xO-vR-IGM" kind="presentation" id="eKh-77-0Px"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
@@ -110,14 +115,51 @@
                     <view key="view" contentMode="scaleToFill" id="Jht-Vk-Dap">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yM4-TX-fZE">
+                                <rect key="frame" x="44.5" y="113" width="325" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="325" id="XMz-7x-5Ea"/>
+                                    <constraint firstAttribute="width" constant="325" id="oMZ-28-wHx"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a Caption..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xxv-4d-2Kf">
+                                <rect key="frame" x="44.5" y="463" width="325" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Xxv-4d-2Kf" firstAttribute="top" secondItem="yM4-TX-fZE" secondAttribute="bottom" constant="25" id="6jF-y7-uk2"/>
+                            <constraint firstItem="yM4-TX-fZE" firstAttribute="top" secondItem="qHI-ST-Hdv" secondAttribute="top" constant="25" id="PG3-my-mcP"/>
+                            <constraint firstItem="Xxv-4d-2Kf" firstAttribute="trailing" secondItem="yM4-TX-fZE" secondAttribute="trailing" id="X9R-4b-C0l"/>
+                            <constraint firstItem="Xxv-4d-2Kf" firstAttribute="centerX" secondItem="Jht-Vk-Dap" secondAttribute="centerX" id="awO-zv-s8w"/>
+                            <constraint firstItem="Xxv-4d-2Kf" firstAttribute="leading" secondItem="yM4-TX-fZE" secondAttribute="leading" id="hhU-mI-0hG"/>
+                            <constraint firstItem="yM4-TX-fZE" firstAttribute="centerX" secondItem="Jht-Vk-Dap" secondAttribute="centerX" id="nD3-nS-pns"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qHI-ST-Hdv"/>
                     </view>
-                    <navigationItem key="navigationItem" id="04K-Gv-vNe"/>
+                    <navigationItem key="navigationItem" id="04K-Gv-vNe">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1pI-Kb-TOC">
+                            <connections>
+                                <action selector="pressedCancel:" destination="afF-5n-UHf" id="8Tg-cL-J4u"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="aZA-gg-8OC">
+                            <connections>
+                                <action selector="pressedPost:" destination="afF-5n-UHf" id="K9s-bF-Ssn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextField" destination="Xxv-4d-2Kf" id="5b7-yb-iwh"/>
+                        <outlet property="chosenImageView" destination="yM4-TX-fZE" id="bWV-6n-GWC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5E-Tn-jfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3657" y="70"/>
+            <point key="canvasLocation" x="3656.521739130435" y="69.642857142857139"/>
         </scene>
         <!--FeedNavController-->
         <scene sceneID="mRt-bc-wyK">
@@ -140,7 +182,7 @@
         <!--ComposeNavController-->
         <scene sceneID="vIE-gS-caN">
             <objects>
-                <navigationController storyboardIdentifier="ComposeNavController" title="ComposeNavController" automaticallyAdjustsScrollViewInsets="NO" id="9xO-vR-IGM" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ComposeNavController" title="ComposeNavController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="9xO-vR-IGM" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vr1-Fn-mr4">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
