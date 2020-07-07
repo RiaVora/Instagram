@@ -93,11 +93,31 @@
                                 <action selector="pressedLogout:" destination="X04-IE-ng3" id="XHb-nf-Ym9"/>
                             </connections>
                         </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem id="OlU-6j-KyN"/>
+                            <barButtonItem landscapeImage="insta_camera_btn" id="fQG-dE-peA"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRh-zN-Hei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="69.642857142857139"/>
+        </scene>
+        <!--ComposeViewController-->
+        <scene sceneID="75K-ir-nP3">
+            <objects>
+                <viewController storyboardIdentifier="ComposeViewController" title="ComposeViewController" id="afF-5n-UHf" customClass="ComposeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jht-Vk-Dap">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="qHI-ST-Hdv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="04K-Gv-vNe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5E-Tn-jfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3657" y="70"/>
         </scene>
         <!--FeedNavController-->
         <scene sceneID="mRt-bc-wyK">
@@ -117,5 +137,26 @@
             </objects>
             <point key="canvasLocation" x="960.86956521739137" y="69.642857142857139"/>
         </scene>
+        <!--ComposeNavController-->
+        <scene sceneID="vIE-gS-caN">
+            <objects>
+                <navigationController storyboardIdentifier="ComposeNavController" title="ComposeNavController" automaticallyAdjustsScrollViewInsets="NO" id="9xO-vR-IGM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vr1-Fn-mr4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="afF-5n-UHf" kind="relationship" relationship="rootViewController" id="yEC-kX-c5l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tku-z9-lzE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2746" y="70"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>
