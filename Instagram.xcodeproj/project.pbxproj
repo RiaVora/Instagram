@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		27DF388E14ADAF16A7EF6C80 /* Pods_Instagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3C56E40BB4198AACE94FC5B /* Pods_Instagram.framework */; };
 		5893439124B3C80100C431BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439024B3C80100C431BD /* AppDelegate.m */; };
 		5893439424B3C80100C431BD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439324B3C80100C431BD /* SceneDelegate.m */; };
-		5893439724B3C80100C431BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439624B3C80100C431BD /* ViewController.m */; };
+		5893439724B3C80100C431BD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439624B3C80100C431BD /* LoginViewController.m */; };
 		5893439A24B3C80100C431BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5893439824B3C80100C431BD /* Main.storyboard */; };
 		5893439C24B3C80200C431BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893439B24B3C80200C431BD /* Assets.xcassets */; };
 		5893439F24B3C80200C431BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5893439D24B3C80200C431BD /* LaunchScreen.storyboard */; };
@@ -50,8 +50,8 @@
 		5893439024B3C80100C431BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5893439224B3C80100C431BD /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		5893439324B3C80100C431BD /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		5893439524B3C80100C431BD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5893439624B3C80100C431BD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5893439524B3C80100C431BD /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5893439624B3C80100C431BD /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5893439924B3C80100C431BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5893439B24B3C80200C431BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5893439E24B3C80200C431BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 				5893439024B3C80100C431BD /* AppDelegate.m */,
 				5893439224B3C80100C431BD /* SceneDelegate.h */,
 				5893439324B3C80100C431BD /* SceneDelegate.m */,
-				5893439524B3C80100C431BD /* ViewController.h */,
-				5893439624B3C80100C431BD /* ViewController.m */,
+				5893439524B3C80100C431BD /* LoginViewController.h */,
+				5893439624B3C80100C431BD /* LoginViewController.m */,
 				5893439824B3C80100C431BD /* Main.storyboard */,
 				5893439B24B3C80200C431BD /* Assets.xcassets */,
 				5893439D24B3C80200C431BD /* LaunchScreen.storyboard */,
@@ -164,7 +164,6 @@
 				54ED6C70984B6226305C2450 /* Pods-InstagramTests.debug.xcconfig */,
 				D41A70FDDD3D2821B7415E4F /* Pods-InstagramTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -416,7 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5893439724B3C80100C431BD /* ViewController.m in Sources */,
+				5893439724B3C80100C431BD /* LoginViewController.m in Sources */,
 				5893439124B3C80100C431BD /* AppDelegate.m in Sources */,
 				589343A224B3C80200C431BD /* main.m in Sources */,
 				5893439424B3C80100C431BD /* SceneDelegate.m in Sources */,
