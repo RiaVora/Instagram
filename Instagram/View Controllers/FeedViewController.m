@@ -11,7 +11,7 @@
 #import "SceneDelegate.h"
 #import "LoginViewController.h"
 
-@interface FeedViewController ()
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -20,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
+
 }
 
 - (IBAction)pressedLogout:(id)sender {
@@ -63,6 +66,8 @@
     LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     sceneDelegate.window.rootViewController = loginViewController;
 }
+
+
 
 /*
 #pragma mark - Navigation
