@@ -6,6 +6,7 @@
 //  Copyright © 2020 Ria Vora. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
 @interface Post : PFObject<PFSubclassing>
