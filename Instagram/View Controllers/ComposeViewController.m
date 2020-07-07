@@ -38,7 +38,7 @@
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     self.chosenImageView.image = nil;
-    self.chosenImageView.image = originalImage;
+    self.chosenImageView.image = [self resizeImage:originalImage withSize:(CGSizeMake(325, 325))];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -46,6 +46,25 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 - (IBAction)pressedPost:(id)sender {
+    NSString *caption = self.captionTextField.text;
+    UIImage *image = self.chosenImageView.image;
+    
+    
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /*
