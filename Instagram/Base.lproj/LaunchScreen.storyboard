@@ -27,12 +27,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="insta_camera_btn" translatesAutoresizingMaskIntoConstraints="NO" id="W46-qe-SaC">
+                                <rect key="frame" x="107" y="413" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="u9a-Fv-7rP"/>
+                                    <constraint firstAttribute="height" constant="100" id="zJD-ma-HE5"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.79872907619655564" blue="0.80959492177025383" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="FRZ-JB-r1M" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="200" id="0wn-tn-oaQ"/>
                             <constraint firstItem="FRZ-JB-r1M" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1xZ-yg-CyG"/>
+                            <constraint firstItem="W46-qe-SaC" firstAttribute="top" secondItem="dTT-w3-6cb" secondAttribute="bottom" constant="100" id="IDC-Ia-9P1"/>
                             <constraint firstItem="dTT-w3-6cb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Ldu-t2-1BN"/>
+                            <constraint firstItem="W46-qe-SaC" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OnY-Nv-AjV"/>
                             <constraint firstItem="dTT-w3-6cb" firstAttribute="top" secondItem="FRZ-JB-r1M" secondAttribute="bottom" constant="8" id="QAy-bc-NHZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -43,4 +52,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="insta_camera_btn" width="25" height="25"/>
+    </resources>
 </document>
