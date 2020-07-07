@@ -26,6 +26,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self getPosts];
 }
 
 - (IBAction)pressedLogout:(id)sender {
@@ -78,7 +79,8 @@
 
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
-            // do something with the data fetched
+            NSLog(@"Successfully received posts!");
+            self.posts = posts;
             [self.tableView reloadData];
         }
         else {
@@ -88,6 +90,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
+    Post *post = self.posts[indexPath.row];
+    cell.post = post;
+    [cell updateValues];
+    
+    return cell;
     
 }
 
