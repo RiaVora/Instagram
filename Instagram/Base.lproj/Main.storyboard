@@ -426,15 +426,13 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <gestureRecognizers/>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="uSO-Ud-Ytg" appends="YES" id="pZ1-x2-eFm"/>
-                                                    </connections>
                                                 </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="200"/>
                                         <connections>
                                             <outlet property="pictureView" destination="P43-gZ-D0N" id="4iz-r4-abt"/>
+                                            <segue destination="G8B-TF-8wc" kind="show" id="Lol-IP-bDz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -465,9 +463,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFI-px-Ygh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="uSO-Ud-Ytg"/>
             </objects>
-            <point key="canvasLocation" x="-1791.304347826087" y="1643.9732142857142"/>
+            <point key="canvasLocation" x="-512" y="2402"/>
         </scene>
         <!--FeedNavController-->
         <scene sceneID="mRt-bc-wyK">
@@ -526,6 +523,9 @@
             <point key="canvasLocation" x="-622" y="1594"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Lol-IP-bDz"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
         <image name="insta_camera_btn" width="25" height="25"/>
