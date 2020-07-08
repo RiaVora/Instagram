@@ -10,9 +10,8 @@
 
 @implementation PostCollectionCell
 
-- (void)setPicture:(Post *)post {
+- (void)setPost:(Post *)post {
     _post = post;
-
 
     self.pictureView.image = nil;
     [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
