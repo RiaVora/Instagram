@@ -15,6 +15,8 @@
 		5878554D24B434D3007CC121 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 5878554C24B434D3007CC121 /* Post.m */; };
 		5878555124B51736007CC121 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5878555024B51736007CC121 /* PostCell.m */; };
 		5878555624B661BF007CC121 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5878555524B661BF007CC121 /* DetailsViewController.m */; };
+		5878555924B67093007CC121 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5878555824B67093007CC121 /* ProfileViewController.m */; };
+		5878555C24B67200007CC121 /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5878555B24B67200007CC121 /* PostCollectionCell.m */; };
 		5893439124B3C80100C431BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439024B3C80100C431BD /* AppDelegate.m */; };
 		5893439424B3C80100C431BD /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439324B3C80100C431BD /* SceneDelegate.m */; };
 		5893439724B3C80100C431BD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893439624B3C80100C431BD /* LoginViewController.m */; };
@@ -60,6 +62,10 @@
 		5878555024B51736007CC121 /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		5878555424B661BF007CC121 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		5878555524B661BF007CC121 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		5878555724B67093007CC121 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		5878555824B67093007CC121 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		5878555A24B67200007CC121 /* PostCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionCell.h; sourceTree = "<group>"; };
+		5878555B24B67200007CC121 /* PostCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionCell.m; sourceTree = "<group>"; };
 		5893438C24B3C80100C431BD /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5893438F24B3C80100C431BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5893439024B3C80100C431BD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +128,8 @@
 				5878554824B42958007CC121 /* ComposeViewController.m */,
 				5878555424B661BF007CC121 /* DetailsViewController.h */,
 				5878555524B661BF007CC121 /* DetailsViewController.m */,
+				5878555724B67093007CC121 /* ProfileViewController.h */,
+				5878555824B67093007CC121 /* ProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -140,6 +148,8 @@
 			children = (
 				5878554F24B51736007CC121 /* PostCell.h */,
 				5878555024B51736007CC121 /* PostCell.m */,
+				5878555A24B67200007CC121 /* PostCollectionCell.h */,
+				5878555B24B67200007CC121 /* PostCollectionCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -466,8 +476,10 @@
 			files = (
 				5893439724B3C80100C431BD /* LoginViewController.m in Sources */,
 				586E958B24B40BE000B63CCA /* FeedViewController.m in Sources */,
+				5878555C24B67200007CC121 /* PostCollectionCell.m in Sources */,
 				5893439124B3C80100C431BD /* AppDelegate.m in Sources */,
 				5878555124B51736007CC121 /* PostCell.m in Sources */,
+				5878555924B67093007CC121 /* ProfileViewController.m in Sources */,
 				5878554924B42958007CC121 /* ComposeViewController.m in Sources */,
 				589343A224B3C80200C431BD /* main.m in Sources */,
 				5878555624B661BF007CC121 /* DetailsViewController.m in Sources */,
