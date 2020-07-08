@@ -19,10 +19,10 @@
     [super setSelected:selected animated:animated];
     if (selected) {
         [UIView animateWithDuration:0.1 animations:^{
-            self.timestamp.hidden = NO;
+            self.timestampLabel.hidden = NO;
         }];
     } else {
-        self.timestamp.hidden = YES;
+        self.timestampLabel.hidden = YES;
     }
 
 }
@@ -41,8 +41,8 @@
     self.captionLabel.text = self.post.caption;
     self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
     self.commentCount.text = [NSString stringWithFormat:@"%@", self.post.commentCount];
-    self.timestamp.text = [NSString stringWithFormat:@"|  Posted %@ ago", self.post.createdAt.shortTimeAgoSinceNow];
-    self.timestamp.hidden = YES;
+    self.timestampLabel.text = [NSString stringWithFormat:@"|  Posted %@ ago", self.post.createdAt.shortTimeAgoSinceNow];
+    self.timestampLabel.hidden = YES;
 
 }
 
