@@ -176,7 +176,7 @@
                                             <outlet property="pictureView" destination="eCb-Jg-iwv" id="3cf-vw-65d"/>
                                             <outlet property="timestampLabel" destination="53Q-xU-5Ea" id="YNB-XY-qac"/>
                                             <outlet property="userLabel" destination="TID-nq-PzZ" id="yyn-69-Y6P"/>
-                                            <segue destination="G8B-TF-8wc" kind="show" id="MvG-2a-EaI"/>
+                                            <segue destination="G8B-TF-8wc" kind="show" identifier="detailsSegue" id="MvG-2a-EaI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
