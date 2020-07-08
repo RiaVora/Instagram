@@ -36,7 +36,6 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
     self.chosenImageView.image = nil;
     self.chosenImageView.image = [self resizeImage:originalImage withSize:(CGSizeMake(325, 325))];
