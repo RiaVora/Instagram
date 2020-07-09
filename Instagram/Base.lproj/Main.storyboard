@@ -103,9 +103,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="eCb-Jg-iwv" secondAttribute="height" multiplier="1:1" id="IAD-TA-67x"/>
                                                     </constraints>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="HoJ-hB-lBz" appends="YES" id="Kmi-lb-yqG"/>
-                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TID-nq-PzZ">
                                                     <rect key="frame" x="20" y="431" width="39" height="21"/>
@@ -218,11 +215,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRh-zN-Hei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="HoJ-hB-lBz">
-                    <connections>
-                        <action selector="pressedLongPost:" destination="X04-IE-ng3" id="Ciq-91-yxL"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2173.913043478261" y="1620.5357142857142"/>
         </scene>

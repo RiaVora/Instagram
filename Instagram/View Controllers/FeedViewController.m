@@ -14,11 +14,12 @@
 #import "PostCell.h"
 #import "DetailsViewController.h"
 
-@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSArray *posts;
+@property (nonatomic, strong) NSMutableArray *posts;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 
 @end
 
@@ -30,6 +31,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.posts = [[NSMutableArray alloc] init];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self getPosts];
     [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
@@ -47,7 +49,10 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             NSLog(@"Successfully received posts!");
-            self.posts = posts;
+            for (Post *post in posts) {
+                [self.posts addObject:post];
+            }
+            self.isMoreDataLoading = false;
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
         }
@@ -76,24 +81,19 @@
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat: @"Logout of '%@'", currentUsername] message:@"Are you sure you want to logout?" preferredStyle:(UIAlertControllerStyleAlert)];
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
-                                                           style:UIAlertActionStyleCancel
-                                                         handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * _Nonnull action){}];
     
     [alert addAction:cancelAction];
     
-    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Yes"
-                                                        style:UIAlertActionStyleDefault
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDefault
                                                       handler:^(UIAlertAction * _Nonnull action) {
         [self switchToLoginScreen];
     }];
     
     [alert addAction:yesAction];
     
-    [self presentViewController:alert animated:YES completion:^{
-    }];
+    [self presentViewController:alert animated:YES completion:^{}];
 }
 
 #pragma mark - UITableViewDataSource
@@ -111,11 +111,19 @@
     return self.posts.count;
 }
 
-//- (IBAction)pressedLongPost:(UILongPressGestureRecognizer *)sender {
-//    PostCell *tappedCell = [sender locationInView:self.view];
-//    [tappedCell addLike];
-//}
+#pragma mark - UIScrollViewDelegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (!self.isMoreDataLoading) {
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+               
+        if (scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            self.isMoreDataLoading = true;
+            [self getPosts];
+        }
+    }
+}
 
 #pragma mark - Navigation
 
