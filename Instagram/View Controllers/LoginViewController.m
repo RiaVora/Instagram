@@ -17,11 +17,10 @@
 
 @implementation LoginViewController
 
-#pragma mark - Init
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - Actions
@@ -45,8 +44,6 @@
             }
         }];
     }
-    
-    
 }
 - (IBAction)pressedLogin:(id)sender {
     NSString *username = self.usernameTextField.text;
@@ -87,7 +84,6 @@
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
                                                        style:UIAlertActionStyleDefault
                                                      handler:^(UIAlertAction * _Nonnull action) {
-        // handle response here.
     }];
     
     [alert addAction:okAction];

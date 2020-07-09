@@ -24,7 +24,7 @@
 
 @implementation FeedViewController
 
-#pragma mark - Init
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,6 +35,8 @@
     [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
+
+#pragma mark - Data Query
 
 - (void)getPosts {
     PFQuery *postQuery = [Post query];
