@@ -10,6 +10,7 @@
 #import "Post.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *captionField;
 
 @end
 
@@ -48,9 +49,8 @@
 -(IBAction)pressedCancel:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
-
 - (IBAction)pressedPost:(id)sender {
-    NSString *caption = self.captionTextField.text;
+    NSString *caption = self.captionField.text;
     UIImage *image = self.chosenImageView.image;
     
     [Post postUserImage:image withCaption:caption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
@@ -60,6 +60,7 @@
             NSLog(@"Error posting photo: %@", error.localizedDescription);
         }
     }];
+    
     
     [self dismissViewControllerAnimated:true completion:nil];
 }

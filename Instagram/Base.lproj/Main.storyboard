@@ -256,49 +256,49 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jh5-eT-PVP">
-                                        <rect key="frame" x="32" y="139" width="350" height="350"/>
+                                        <rect key="frame" x="32" y="189" width="350" height="350"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="jh5-eT-PVP" secondAttribute="height" multiplier="1:1" id="MNt-Br-J22"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfG-XD-veh">
-                                        <rect key="frame" x="32" y="534" width="39" height="21"/>
+                                        <rect key="frame" x="32" y="584" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBs-uD-gGE">
-                                        <rect key="frame" x="32" y="565" width="60" height="21"/>
+                                        <rect key="frame" x="32" y="615" width="60" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="# of Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tX3-jO-Tem">
-                                        <rect key="frame" x="32" y="509" width="53" height="15"/>
+                                        <rect key="frame" x="32" y="559" width="53" height="15"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Likes  |" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U24-86-ARz">
-                                        <rect key="frame" x="90" y="509" width="38" height="15"/>
+                                        <rect key="frame" x="90" y="559" width="38" height="15"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="# of Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgb-6a-EpK">
-                                        <rect key="frame" x="134" y="509" width="86" height="15"/>
+                                        <rect key="frame" x="134" y="559" width="86" height="15"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kId-ZH-cE2">
-                                        <rect key="frame" x="225" y="509" width="61" height="15"/>
+                                        <rect key="frame" x="225" y="559" width="61" height="15"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="|  Timestamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkt-SP-NE7">
-                                        <rect key="frame" x="292" y="509" width="72" height="15"/>
+                                        <rect key="frame" x="292" y="559" width="72" height="15"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -341,17 +341,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="y4e-sS-G9z"/>
                     <connections>
-                        <outlet property="captionLabel" destination="SBs-uD-gGE" id="dvH-Eh-i8w"/>
-                        <outlet property="commentCount" destination="rgb-6a-EpK" id="KLD-lE-KEl"/>
-                        <outlet property="likeCount" destination="tX3-jO-Tem" id="Zvg-Os-U5f"/>
-                        <outlet property="pictureView" destination="jh5-eT-PVP" id="SKR-9R-kgD"/>
-                        <outlet property="timestampLabel" destination="Pkt-SP-NE7" id="Tj6-ho-PCJ"/>
-                        <outlet property="userLabel" destination="pfG-XD-veh" id="eg0-HI-rfh"/>
+                        <outlet property="captionLabel" destination="SBs-uD-gGE" id="cUA-bY-vMv"/>
+                        <outlet property="commentCount" destination="rgb-6a-EpK" id="uqC-aG-9Xk"/>
+                        <outlet property="likeCount" destination="tX3-jO-Tem" id="eNB-km-IZ5"/>
+                        <outlet property="pictureView" destination="jh5-eT-PVP" id="i4u-M3-aFn"/>
+                        <outlet property="timestampLabel" destination="Pkt-SP-NE7" id="NXQ-z2-njM"/>
+                        <outlet property="userLabel" destination="pfG-XD-veh" id="t0P-cQ-sVR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i9k-gV-v3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="2357"/>
+            <point key="canvasLocation" x="1263.768115942029" y="2356.4732142857142"/>
         </scene>
         <!--ComposeViewController-->
         <scene sceneID="75K-ir-nP3">
@@ -398,8 +398,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="captionField" destination="Xxv-4d-2Kf" id="7tW-6c-7XE"/>
                         <outlet property="captionTextField" destination="Xxv-4d-2Kf" id="5b7-yb-iwh"/>
-                        <outlet property="chosenImageView" destination="yM4-TX-fZE" id="bWV-6n-GWC"/>
+                        <outlet property="chosenImageView" destination="yM4-TX-fZE" id="o3N-rc-Jqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5E-Tn-jfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -473,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFI-px-Ygh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-512" y="2402"/>
+            <point key="canvasLocation" x="-513.04347826086962" y="2401.3392857142858"/>
         </scene>
         <!--FeedNavController-->
         <scene sceneID="mRt-bc-wyK">
@@ -533,7 +534,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MvG-2a-EaI"/>
+        <segue reference="Lol-IP-bDz"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
