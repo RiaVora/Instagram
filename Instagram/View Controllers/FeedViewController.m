@@ -59,7 +59,6 @@
             } else {
                 self.posts = [NSMutableArray arrayWithArray: posts];
             }
-            
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
         }

@@ -8,6 +8,7 @@
 
 #import "ComposeViewController.h"
 #import "Post.h"
+#import "MBProgressHUD.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionField;
@@ -52,6 +53,7 @@
     [self dismissViewControllerAnimated:true completion:nil];
 }
 - (IBAction)pressedPost:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:true];
     NSString *caption = self.captionField.text;
     UIImage *image = self.chosenImageView.image;
     
@@ -61,6 +63,7 @@
         } else {
             NSLog(@"Error posting photo: %@", error.localizedDescription);
         }
+        [MBProgressHUD hideHUDForView:self.view animated:true];
     }];
 
     [self dismissViewControllerAnimated:true completion:nil];

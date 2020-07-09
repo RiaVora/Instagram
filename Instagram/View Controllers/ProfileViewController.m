@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "PostCollectionCell.h"
 #import "DetailsViewController.h"
+#import "MBProgressHUD.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -49,6 +50,7 @@
 #pragma mark - Data Query
 
 - (void)getPosts {
+    [MBProgressHUD showHUDAddedTo:self.view animated:true];
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
@@ -62,6 +64,7 @@
             
             self.posts = posts;
             [self.collectionView reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:true];
             [self.refreshControl endRefreshing];
         }
     }];
