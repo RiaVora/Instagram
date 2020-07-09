@@ -10,9 +10,11 @@
 
 @implementation PostCollectionCell
 
+#pragma mark - Setup
+
 - (void)setPost:(Post *)post {
     _post = post;
-
+    
     self.pictureView.image = nil;
     [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
@@ -21,7 +23,7 @@
             self.pictureView.image = [UIImage imageWithData:data];
         }
     }];
-
+    
 }
 
 @end

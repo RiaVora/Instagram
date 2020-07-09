@@ -15,6 +15,8 @@
 
 @implementation ComposeViewController
 
+#pragma mark - Init
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,8 +31,6 @@
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
     [self presentViewController:imagePickerVC animated:YES completion:nil];
-    
-
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -42,9 +42,13 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark - Actions
+
 -(IBAction)pressedCancel:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
 - (IBAction)pressedPost:(id)sender {
     NSString *caption = self.captionTextField.text;
     UIImage *image = self.chosenImageView.image;
@@ -56,7 +60,6 @@
             NSLog(@"Error posting photo: %@", error.localizedDescription);
         }
     }];
-    
     
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -74,15 +77,5 @@
     
     return newImage;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

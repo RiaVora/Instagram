@@ -22,6 +22,8 @@
 
 @implementation ProfileViewController
 
+#pragma mark - Init
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.delegate = self;
@@ -35,17 +37,13 @@
     [self.collectionView insertSubview:self.refreshControl atIndex:0];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)
-                                          self.collectionView.collectionViewLayout;
-    
+    self.collectionView.collectionViewLayout;
     layout.minimumInteritemSpacing = 5;
     layout.minimumLineSpacing = 5;
     CGFloat postersPerLine = 2;
     CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
     CGFloat itemHeight = itemWidth;
-
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
-
-
 }
 
 - (void)getPosts {
@@ -59,14 +57,15 @@
             NSLog(@"Error with fetching posts specific to the user: %@", error.localizedDescription);
         } else {
             NSLog(@"Successfully got posts for profile!");
-
+            
             self.posts = posts;
             [self.collectionView reloadData];
             [self.refreshControl endRefreshing];
         }
     }];
-    
 }
+
+#pragma mark - UICollectionViewDataSource
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
@@ -81,9 +80,6 @@
 }
 
 
-
-
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -95,8 +91,7 @@
     DetailsViewController *detailsViewController = [segue destinationViewController];
     
     detailsViewController.post = post;
-
+    
 }
-
 
 @end

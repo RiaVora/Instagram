@@ -15,6 +15,8 @@
 
 @implementation DetailsViewController
 
+#pragma mark - Init
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateValues];
@@ -35,17 +37,5 @@
     self.commentCount.text = [NSString stringWithFormat:@"%@", self.post.commentCount];
     self.timestampLabel.text = [NSString stringWithFormat:@"|  Posted %@ ago", self.post.createdAt.shortTimeAgoSinceNow];
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

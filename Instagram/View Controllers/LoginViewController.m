@@ -17,10 +17,14 @@
 
 @implementation LoginViewController
 
+#pragma mark - Init
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
+#pragma mark - Actions
 
 - (IBAction)pressedSignUp:(id)sender {
     PFUser *newUser = [PFUser user];
@@ -42,7 +46,7 @@
         }];
     }
     
-
+    
 }
 - (IBAction)pressedLogin:(id)sender {
     NSString *username = self.usernameTextField.text;
@@ -60,12 +64,10 @@
                 self.usernameTextField.text = @"";
                 self.passwordTextField.text = @"";
                 [self performSegueWithIdentifier:@"loginSegue" sender:nil];
-
+                
             }
         }];
     }
-    
-    
 }
 
 - (BOOL)checkExists:(NSString *)text :(NSString *)field {
@@ -76,14 +78,16 @@
     return YES;
 }
 
-- (void)displayAlert:(NSString *)title :(NSString *)message {
+#pragma mark - Alerts
 
+- (void)displayAlert:(NSString *)title :(NSString *)message {
+    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleAlert)];
     
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
-      style:UIAlertActionStyleDefault
-    handler:^(UIAlertAction * _Nonnull action) {
-            // handle response here.
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {
+        // handle response here.
     }];
     
     [alert addAction:okAction];
@@ -91,10 +95,6 @@
     [self presentViewController:alert animated:YES completion:^{
     }];
 }
-
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//}
 
 
 @end

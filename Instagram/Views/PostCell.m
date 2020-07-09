@@ -11,6 +11,8 @@
 
 @implementation PostCell
 
+#pragma mark - Init
+
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
@@ -18,6 +20,8 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 }
+
+#pragma mark - Setup
 
 - (void)updateValues {
     [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -33,8 +37,9 @@
     self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
     self.commentCount.text = [NSString stringWithFormat:@"%@", self.post.commentCount];
     self.timestampLabel.text = [NSString stringWithFormat:@"|  Posted %@ ago", self.post.createdAt.shortTimeAgoSinceNow];
-
 }
+
+#pragma mark - Actions
 
 - (void)addLike {
     [self.post addLike];

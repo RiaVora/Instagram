@@ -8,7 +8,7 @@
 
 #import "Post.h"
 @implementation Post
-    
+
 @dynamic postID;
 @dynamic userID;
 @dynamic author;
@@ -17,9 +17,13 @@
 @dynamic likeCount;
 @dynamic commentCount;
 
+#pragma mark - Setup
+
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
+
+#pragma mark - Actions
 
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
@@ -33,7 +37,7 @@
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
- 
+    
     if (!image) {
         return nil;
     }

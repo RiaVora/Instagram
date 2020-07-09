@@ -6,6 +6,9 @@
 //  Copyright © 2020 Ria Vora. All rights reserved.
 //
 
+/* The DetailsViewController represents the detailed view of a post that the user sees after clicking on a PostCell in the FeedViewController or a PostCollectionCell in the ProfileViewController. The details view operates similar to the PostCell and PostCollection cell in that it takes a Post (passed through a segue) and uses it to initialize it's labels and views.*/
+
+
 #import <UIKit/UIKit.h>
 #import "Post.h"
 
