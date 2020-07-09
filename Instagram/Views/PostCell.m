@@ -36,4 +36,9 @@
 
 }
 
+- (void)addLike {
+    [self.post addLike];
+    self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
+}
+
 @end

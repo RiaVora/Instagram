@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) Post *post;
 
 - (void)updateValues;
+- (void)addLike;
 
 @end
 

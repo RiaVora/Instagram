@@ -108,11 +108,15 @@
         return self.posts.count;
 }
 
+//- (IBAction)pressedLongPost:(UILongPressGestureRecognizer *)sender {
+//    PostCell *tappedCell = [sender locationInView:self.view];
+//    [tappedCell addLike];
+//}
 
 
  #pragma mark - Navigation
  
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if ([segue.identifier isEqualToString:@"detailsSegue"]) {
          UITableViewCell *tappedCell = sender;
          NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];

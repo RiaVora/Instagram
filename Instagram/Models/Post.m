@@ -46,4 +46,8 @@
     return [PFFileObject fileObjectWithName:@"image.png" data:imageData];
 }
 
+- (void)addLike {
+    self.likeCount = [NSNumber numberWithInt: [self.likeCount intValue] + 1];
+}
+
 @end
