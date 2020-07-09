@@ -20,13 +20,14 @@
 
 @implementation DetailsViewController
 
-#pragma mark - Init
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self updateValues];
 }
 
+#pragma mark - Setup
 - (void)updateValues {
     [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {

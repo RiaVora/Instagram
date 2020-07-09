@@ -22,7 +22,7 @@
 
 @implementation ProfileViewController
 
-#pragma mark - Init
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,6 +45,8 @@
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
 }
+
+#pragma mark - Data Query
 
 - (void)getPosts {
     PFQuery *postQuery = [Post query];
@@ -91,7 +93,6 @@
     DetailsViewController *detailsViewController = [segue destinationViewController];
     
     detailsViewController.post = post;
-    
 }
 
 @end

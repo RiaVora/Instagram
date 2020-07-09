@@ -16,7 +16,7 @@
 
 @implementation ComposeViewController
 
-#pragma mark - Init
+#pragma mark - UIViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +33,8 @@
     }
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
+
+#pragma mark - UIImagePickerController
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
@@ -60,7 +62,6 @@
             NSLog(@"Error posting photo: %@", error.localizedDescription);
         }
     }];
-    
     
     [self dismissViewControllerAnimated:true completion:nil];
 }
