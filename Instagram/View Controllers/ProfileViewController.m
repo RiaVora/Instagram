@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSArray *posts;
+@property (weak, nonatomic) IBOutlet UIImageView *profileView;
 
 @end
 
@@ -30,6 +31,17 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.userLabel.text = PFUser.currentUser.username;
+    if (PFUser.currentUser[@"image"]) {
+        [PFUser.currentUser[@"image"] getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Error with getting data from Image: %@", error.localizedDescription);
+            } else {
+                self.profileView.image = [UIImage imageWithData:data];
+            }
+        }];        
+    } else {
+        self.profileView.image = [UIImage imageNamed:@"profile_tab"];
+    }
     
     [self getPosts];
     
@@ -74,7 +86,6 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
-    
     cell.post = self.posts[indexPath.item];
     
     return cell;
@@ -83,6 +94,8 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
 }
+
+
 
 
 #pragma mark - Navigation
