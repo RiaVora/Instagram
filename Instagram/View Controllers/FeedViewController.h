@@ -6,6 +6,8 @@
 //  Copyright © 2020 Ria Vora. All rights reserved.
 //
 
+/* The FeedViewController represents the home feed that the user sees when they open Instagram after being logged in. It uses a TableView to display each PostCell and has an array of Posts pulled from Parse.*/
+
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Ria Vora. All rights reserved.
 //
 
+/* The Post class represents a single Post PFObject from Parse (and is therefore a child class of PFObject). A Post instance has all the attributes from Parse readily accessible as attributes.*/
+
 
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
