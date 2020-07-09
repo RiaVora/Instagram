@@ -62,7 +62,7 @@
             NSLog(@"Error posting photo: %@", error.localizedDescription);
         }
     }];
-    
+
     [self dismissViewControllerAnimated:true completion:nil];
 }
 

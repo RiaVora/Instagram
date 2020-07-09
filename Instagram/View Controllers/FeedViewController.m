@@ -33,6 +33,7 @@
     self.tableView.dataSource = self;
     self.posts = [[NSMutableArray alloc] init];
     self.refreshControl = [[UIRefreshControl alloc] init];
+    self.isMoreDataLoading = false;
     [self getPosts];
     [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
@@ -40,7 +41,7 @@
 
 #pragma mark - Data Query
 
-- (void)getPosts {
+- (void)getPosts{
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
@@ -49,10 +50,16 @@
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
             NSLog(@"Successfully received posts!");
-            for (Post *post in posts) {
-                [self.posts addObject:post];
+            
+            if (self.isMoreDataLoading) {
+                for (Post *post in posts) {
+                    [self.posts addObject:post];
+                }
+                self.isMoreDataLoading = false;
+            } else {
+                self.posts = [NSMutableArray arrayWithArray: posts];
             }
-            self.isMoreDataLoading = false;
+            
             [self.tableView reloadData];
             [self.refreshControl endRefreshing];
         }
