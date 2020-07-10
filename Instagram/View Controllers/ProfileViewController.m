@@ -43,18 +43,18 @@
         self.user = [PFUser currentUser];
     }
     self.userLabel.text = self.user.username;
-
+    
     if (self.user[@"image"]) {
-           [self.user[@"image"] getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-               if (error) {
-                   NSLog(@"Error with getting data from Image: %@", error.localizedDescription);
-               } else {
-                   self.profileView.image = [UIImage imageWithData:data];
-               }
-           }];
-       } else {
-           self.profileView.image = [UIImage imageNamed:@"profile_tab"];
-       }
+        [self.user[@"image"] getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"Error with getting data from Image: %@", error.localizedDescription);
+            } else {
+                self.profileView.image = [UIImage imageWithData:data];
+            }
+        }];
+    } else {
+        self.profileView.image = [UIImage imageNamed:@"profile_tab"];
+    }
 }
 
 - (void)initRefreshControl {
@@ -116,9 +116,24 @@
     if ([self.user isEqual:PFUser.currentUser]) {
         [self initImagePicker];
     } else {
-        NSLog(@"You are not logged in as %@ so you cannot change the profile photo as %@", self.user.username, PFUser.currentUser.username);
+        NSString *message = [NSString stringWithFormat:@"You are logged in as '%@' so you cannot change the profile photo of '%@'", PFUser.currentUser.username, self.user.username];
+        [self displayAlert:@"Cannot Change Picture" :message];
     }
     
+}
+
+#pragma mark - Alerts
+
+- (void)displayAlert:(NSString *)title :(NSString *)message {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * _Nonnull action) {}];
+    
+    [alert addAction:okAction];
+    
+    [self presentViewController:alert animated:YES completion:^{}];
 }
 
 #pragma mark - UIImagePickerController

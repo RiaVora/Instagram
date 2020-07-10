@@ -66,6 +66,7 @@
 -(IBAction)pressedCancel:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
 - (IBAction)pressedPost:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.view animated:true];
     NSString *caption = self.captionField.text;
@@ -79,7 +80,7 @@
         }
         [MBProgressHUD hideHUDForView:self.view animated:true];
     }];
-
+    
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
