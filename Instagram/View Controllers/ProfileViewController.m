@@ -98,7 +98,7 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     PostCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath];
-    cell.post = self.posts[indexPath.item];
+    [cell updateValues:self.posts[indexPath.item]];
     
     return cell;
 }

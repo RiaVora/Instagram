@@ -9,6 +9,18 @@
 #import "PostCell.h"
 #import "DateTools.h"
 
+@interface PostCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+@property (weak, nonatomic) IBOutlet UILabel *likeCount;
+@property (weak, nonatomic) IBOutlet UILabel *commentCount;
+@property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+@property (strong, nonatomic) Post *post;
+
+@end
+
 @implementation PostCell
 
 #pragma mark - Init
@@ -23,7 +35,8 @@
 
 #pragma mark - Setup
 
-- (void)updateValues {
+- (void)updateValues: (Post *)post{
+    self.post = post;
     [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error with getting data from Image: %@", error.localizedDescription);

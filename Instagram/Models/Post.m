@@ -7,6 +7,7 @@
 //
 
 #import "Post.h"
+
 @implementation Post
 
 @dynamic postID;
@@ -25,7 +26,7 @@
 
 #pragma mark - Actions
 
-+ (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
++ (void) postUserImage: (UIImage * _Nullable)image withCaption: (NSString * _Nullable)caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
     newPost.image = [self getPFFileFromImage:image];

@@ -172,12 +172,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="captionLabel" destination="amQ-W3-2RT" id="DeE-2k-bmI"/>
-                                            <outlet property="commentCount" destination="22M-qH-F0O" id="a9B-I9-2CU"/>
-                                            <outlet property="likeCount" destination="Ewq-Uq-GI7" id="Xtx-Ou-XAa"/>
-                                            <outlet property="pictureView" destination="eCb-Jg-iwv" id="3cf-vw-65d"/>
-                                            <outlet property="timestampLabel" destination="53Q-xU-5Ea" id="YNB-XY-qac"/>
-                                            <outlet property="userLabel" destination="TID-nq-PzZ" id="yyn-69-Y6P"/>
+                                            <outlet property="captionLabel" destination="amQ-W3-2RT" id="7Kt-4T-RNh"/>
+                                            <outlet property="commentCount" destination="22M-qH-F0O" id="KPY-rw-umQ"/>
+                                            <outlet property="likeCount" destination="Ewq-Uq-GI7" id="3ob-vS-fW0"/>
+                                            <outlet property="pictureView" destination="eCb-Jg-iwv" id="nq9-pJ-hNI"/>
+                                            <outlet property="timestampLabel" destination="53Q-xU-5Ea" id="siy-gs-sqi"/>
+                                            <outlet property="userLabel" destination="TID-nq-PzZ" id="m8d-5Z-szV"/>
                                             <segue destination="G8B-TF-8wc" kind="show" identifier="detailsSegue" id="MvG-2a-EaI"/>
                                         </connections>
                                     </tableViewCell>
@@ -432,7 +432,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="200" height="200"/>
                                         <connections>
-                                            <outlet property="pictureView" destination="P43-gZ-D0N" id="4iz-r4-abt"/>
+                                            <outlet property="pictureView" destination="P43-gZ-D0N" id="T97-l7-Ae5"/>
                                             <segue destination="G8B-TF-8wc" kind="show" id="Lol-IP-bDz"/>
                                         </connections>
                                     </collectionViewCell>

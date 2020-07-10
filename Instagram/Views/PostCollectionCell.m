@@ -8,12 +8,18 @@
 
 #import "PostCollectionCell.h"
 
+@interface PostCollectionCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *pictureView;
+@property (strong, nonatomic) Post *post;
+
+@end
+
 @implementation PostCollectionCell
 
 #pragma mark - Setup
 
-- (void)setPost:(Post *)post {
-    _post = post;
+- (void)updateValues:(Post *)post {
+    self.post = post;
     
     self.pictureView.image = nil;
     [post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
@@ -23,7 +29,6 @@
             self.pictureView.image = [UIImage imageWithData:data];
         }
     }];
-    
 }
 
 @end
