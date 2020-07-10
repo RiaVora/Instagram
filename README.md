@@ -36,6 +36,7 @@ The following **additional** features are implemented:
 - [x] The details view of each post is scrollable only if the caption is longer than the page
 - [x] The posts on Instagram cycle through the same posts with infinite scrolling available
 - [x] By clicking the profile photo, the user can switch their profile photo
+- [x] If the user tries to change a profile photo of a user that is not them, they will receive a personalized alert
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -69,6 +70,10 @@ Here's a walkthrough of implemented user stories:
 - The user can change their profile picture by clicking on their profile picture
 
 <img src='http://g.recordit.co/9eEJSDiWup.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+- The user can see other user's profile views from the details view, but cannot change their profile picture
+
+<img src='http://g.recordit.co/TSYwWOCX0E.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIFs created with [Recordit](http://recordit.co/).
 
