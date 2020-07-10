@@ -12,7 +12,7 @@
 #import "DetailsViewController.h"
 #import "MBProgressHUD.h"
 
-@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate>
+@interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
@@ -39,9 +39,13 @@
 #pragma mark - Setup
 
 - (void)initValues {
-    self.userLabel.text = PFUser.currentUser.username;
-       if (PFUser.currentUser[@"image"]) {
-           [PFUser.currentUser[@"image"] getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+    if (self.user == nil) {
+        self.user = [PFUser currentUser];
+    }
+    self.userLabel.text = self.user.username;
+
+    if (self.user[@"image"]) {
+           [self.user[@"image"] getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
                if (error) {
                    NSLog(@"Error with getting data from Image: %@", error.localizedDescription);
                } else {
@@ -78,7 +82,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    [postQuery whereKey:@"author" equalTo:PFUser.currentUser];
+    [postQuery whereKey:@"author" equalTo:self.user];
     
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray <Post *>* _Nullable posts, NSError * _Nullable error) {
         if (error) {
@@ -109,7 +113,12 @@
 
 #pragma mark - Actions
 - (IBAction)tappedProfilePhoto:(UITapGestureRecognizer *)sender {
-    [self initImagePicker];
+    if ([self.user isEqual:PFUser.currentUser]) {
+        [self initImagePicker];
+    } else {
+        NSLog(@"You are not logged in as %@ so you cannot change the profile photo as %@", self.user.username, PFUser.currentUser.username);
+    }
+    
 }
 
 #pragma mark - UIImagePickerController
@@ -135,8 +144,8 @@
     
     self.profileView.image = nil;
     self.profileView.image = resizedImage;
-    PFUser.currentUser[@"image"] = [Post getPFFileFromImage:resizedImage];
-    [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+    self.user[@"image"] = [Post getPFFileFromImage:resizedImage];
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"Successfully saved image");
         } else {
@@ -165,7 +174,6 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     UICollectionViewCell *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
     Post *post = self.posts[indexPath.row];

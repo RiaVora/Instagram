@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "DateTools.h"
+#import "ProfileViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCount;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+
 
 @end
 
@@ -28,6 +30,7 @@
 }
 
 #pragma mark - Setup
+
 - (void)updateValues {
     [self.post.image getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (error) {
@@ -42,6 +45,21 @@
     self.likeCount.text = [NSString stringWithFormat:@"%@", self.post.likeCount];
     self.commentCount.text = [NSString stringWithFormat:@"%@", self.post.commentCount];
     self.timestampLabel.text = [NSString stringWithFormat:@"|  Posted %@ ago", self.post.createdAt.shortTimeAgoSinceNow];
+}
+
+#pragma mark - Actions
+
+- (IBAction)tappedUser:(UITapGestureRecognizer *)sender {
+    [self performSegueWithIdentifier:@"profileSegue" sender:sender];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"profileSegue"]) {
+        ProfileViewController *profilevc = [segue destinationViewController];
+        profilevc.user = self.post.author;
+    }
 }
 
 @end

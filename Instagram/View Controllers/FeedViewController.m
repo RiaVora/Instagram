@@ -81,6 +81,7 @@
     }];
 }
 
+
 #pragma mark - Alerts
 
 - (void)logoutAlert:(NSString *)currentUsername {
@@ -133,12 +134,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"detailsSegue"]) {
-        UITableViewCell *tappedCell = sender;
-        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
-        Post *post = self.posts[indexPath.row];
-        DetailsViewController *detailsvc = [segue destinationViewController];
-        detailsvc.post = post;
+        [self switchToDetailsScreen:segue sender:sender];
     }
+}
+
+- (void)switchToDetailsScreen:(UIStoryboardSegue *)segue sender:(id)sender {
+    UITableViewCell *tappedCell = sender;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+    Post *post = self.posts[indexPath.row];
+    DetailsViewController *detailsvc = [segue destinationViewController];
+    detailsvc.post = post;
 }
 
 - (void)switchToLoginScreen {
