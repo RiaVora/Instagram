@@ -106,9 +106,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell"];
-    Post *post = self.posts[indexPath.row];
-    cell.post = post;
-    [cell updateValues];
+    [cell updateValues:self.posts[indexPath.row]];
     return cell;
     
 }
